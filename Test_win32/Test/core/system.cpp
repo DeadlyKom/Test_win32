@@ -46,7 +46,7 @@ System::System()
 	m_time.Initialize();
 
 	// ”становим значение дл€ случайности генерации чисел 
-	srand(m_time.GetCurrentTick());
+	srand((uint32_t)m_time.GetCurrentTick());
 
 	// ѕолучим размер экрана по горизонтали
 	m_screen_width	= GetSystemMetrics(SM_CXSCREEN);
@@ -263,12 +263,12 @@ void System::Update(float delta)
 	}
 
 	// ѕроверка пересечени€ м€ча с кра€ми по горихонтали
-	if ((uint32_t)m_rect_window.left   >= ((uint32_t)m_position_ball.cx - (m_size_ball >> 1))) { m_direction_vector.cx =  1; RandSpeedball(); }
-	if ((uint32_t)m_rect_window.right  <= ((uint32_t)m_position_ball.cx + (m_size_ball >> 1))) { m_direction_vector.cx = -1; RandSpeedball(); }
+	if (m_rect_window.left   >= (m_position_ball.cx - (int)(m_size_ball >> 1))) { m_direction_vector.cx =  1; RandSpeedball(); }
+	if (m_rect_window.right  <= (m_position_ball.cx + (int)(m_size_ball >> 1))) { m_direction_vector.cx = -1; RandSpeedball(); }
 
 	// ѕроверка пересечени€ м€ча с кра€ми по вертикали
-	if ((uint32_t)m_rect_window.top    >= ((uint32_t)m_position_ball.cy - (m_size_ball >> 1))) { m_direction_vector.cy =  1; RandSpeedball(); }
-	if ((uint32_t)m_rect_window.bottom <= ((uint32_t)m_position_ball.cy + (m_size_ball >> 1))) { m_direction_vector.cy = -1; RandSpeedball(); }
+	if (m_rect_window.top    >= (m_position_ball.cy - (int)(m_size_ball >> 1))) { m_direction_vector.cy =  1; RandSpeedball(); }
+	if (m_rect_window.bottom <= (m_position_ball.cy + (int)(m_size_ball >> 1))) { m_direction_vector.cy = -1; RandSpeedball(); }
 
 	
 	delta_time += delta;
