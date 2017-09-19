@@ -1,0 +1,7 @@
+﻿  system_time.cpp
+  system.cpp
+c:\[work]\c++\test\win32\test\core\system.cpp(49): warning C4244: аргумент: преобразование "int64_t" в "unsigned int", возможна потеря данных
+  main.cpp
+  Создание кода...
+  Test.vcxproj -> C:\[Work]\C++\Test\Win32\Debug\Test.exe
+  Test.vcxproj -> C:\[Work]\C++\Test\Win32\Debug\Test.pdb (Full PDB)
